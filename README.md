@@ -1,9 +1,14 @@
-# api documentation for  [tunnel (v0.0.4)](https://github.com/koichik/node-tunnel/)  [![npm package](https://img.shields.io/npm/v/npmdoc-tunnel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tunnel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tunnel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tunnel)
+# npmdoc-tunnel
+
+#### api documentation for  [tunnel (v0.0.4)](https://github.com/koichik/node-tunnel/)  [![npm package](https://img.shields.io/npm/v/npmdoc-tunnel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tunnel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tunnel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tunnel)
+
 #### Node HTTP/HTTPS Agents for tunneling proxies
 
-[![NPM](https://nodei.co/npm/tunnel.png?downloads=true)](https://www.npmjs.com/package/tunnel)
+[![NPM](https://nodei.co/npm/tunnel.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tunnel)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-tunnel/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-tunnel%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-tunnel/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-tunnel/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-tunnel/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-tunnel/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-tunnel/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-tunnel/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Koichi Kobayashi",
-        "email": "koichik@improvement.jp"
+        "name": "Koichi Kobayashi"
     },
     "bugs": {
         "url": "https://github.com/koichik/node-tunnel/issues"
@@ -52,13 +56,11 @@
     "main": "./index.js",
     "maintainers": [
         {
-            "name": "koichik",
-            "email": "koichik@improvement.jp"
+            "name": "koichik"
         }
     ],
     "name": "tunnel",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/koichik/node-tunnel.git"
@@ -66,153 +68,9 @@
     "scripts": {
         "test": "./node_modules/mocha/bin/mocha"
     },
-    "version": "0.0.4"
+    "version": "0.0.4",
+    "bin": {}
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module tunnel](#apidoc.module.tunnel)
-1.  [function <span class="apidocSignatureSpan">tunnel.</span>debug ()](#apidoc.element.tunnel.debug)
-1.  [function <span class="apidocSignatureSpan">tunnel.</span>httpOverHttp (options)](#apidoc.element.tunnel.httpOverHttp)
-1.  [function <span class="apidocSignatureSpan">tunnel.</span>httpOverHttps (options)](#apidoc.element.tunnel.httpOverHttps)
-1.  [function <span class="apidocSignatureSpan">tunnel.</span>httpsOverHttp (options)](#apidoc.element.tunnel.httpsOverHttp)
-1.  [function <span class="apidocSignatureSpan">tunnel.</span>httpsOverHttps (options)](#apidoc.element.tunnel.httpsOverHttps)
-
-
-
-# <a name="apidoc.module.tunnel"></a>[module tunnel](#apidoc.module.tunnel)
-
-#### <a name="apidoc.element.tunnel.debug"></a>[function <span class="apidocSignatureSpan">tunnel.</span>debug ()](#apidoc.element.tunnel.debug)
-- description and source-code
-```javascript
-debug = function () {}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.tunnel.httpOverHttp"></a>[function <span class="apidocSignatureSpan">tunnel.</span>httpOverHttp (options)](#apidoc.element.tunnel.httpOverHttp)
-- description and source-code
-```javascript
-function httpOverHttp(options) {
-  var agent = new TunnelingAgent(options);
-  agent.request = http.request;
-  return agent;
-}
-```
-- example usage
-```shell
-...
-  $ npm install tunnel
-
-## Usages
-
-### HTTP over HTTP tunneling
-
-'''javascript
-var tunnelingAgent = tunnel.httpOverHttp({
-maxSockets: poolSize, // Defaults to 5
-
-proxy: { // Proxy settings
-  host: proxyHost, // Defaults to 'localhost'
-  port: proxyPort, // Defaults to 80
-  localAddress: localAddress, // Local interface if necessary
-...
-```
-
-#### <a name="apidoc.element.tunnel.httpOverHttps"></a>[function <span class="apidocSignatureSpan">tunnel.</span>httpOverHttps (options)](#apidoc.element.tunnel.httpOverHttps)
-- description and source-code
-```javascript
-function httpOverHttps(options) {
-  var agent = new TunnelingAgent(options);
-  agent.request = https.request;
-  return agent;
-}
-```
-- example usage
-```shell
-...
-agent: tunnelingAgent
-});
-'''
-
-### HTTP over HTTPS tunneling
-
-'''javascript
-var tunnelingAgent = tunnel.httpOverHttps({
-maxSockets: poolSize, // Defaults to 5
-
-proxy: { // Proxy settings
-  host: proxyHost, // Defaults to 'localhost'
-  port: proxyPort, // Defaults to 443
-  localAddress: localAddress, // Local interface if necessary
-...
-```
-
-#### <a name="apidoc.element.tunnel.httpsOverHttp"></a>[function <span class="apidocSignatureSpan">tunnel.</span>httpsOverHttp (options)](#apidoc.element.tunnel.httpsOverHttp)
-- description and source-code
-```javascript
-function httpsOverHttp(options) {
-  var agent = new TunnelingAgent(options);
-  agent.request = http.request;
-  agent.createSocket = createSecureSocket;
-  return agent;
-}
-```
-- example usage
-```shell
-...
-# node-tunnel - HTTP/HTTPS Agents for tunneling proxies
-
-## Example
-
-'''javascript
-var tunnel = require('tunnel');
-
-var tunnelingAgent = tunnel.httpsOverHttp({
-  proxy: {
-    host: 'localhost',
-    port: 3128
-  }
-});
-
-var req = https.request({
-...
-```
-
-#### <a name="apidoc.element.tunnel.httpsOverHttps"></a>[function <span class="apidocSignatureSpan">tunnel.</span>httpsOverHttps (options)](#apidoc.element.tunnel.httpsOverHttps)
-- description and source-code
-```javascript
-function httpsOverHttps(options) {
-  var agent = new TunnelingAgent(options);
-  agent.request = https.request;
-  agent.createSocket = createSecureSocket;
-  return agent;
-}
-```
-- example usage
-```shell
-...
-agent: tunnelingAgent
-});
-'''
-
-### HTTPS over HTTPS tunneling
-
-'''javascript
-var tunnelingAgent = tunnel.httpsOverHttps({
-maxSockets: poolSize, // Defaults to 5
-
-// CA for origin server if necessary
-ca: [ fs.readFileSync('origin-server-ca.pem')],
-
-// Client certification for origin server if necessary
-key: fs.readFileSync('origin-server-key.pem'),
-...
 ```
 
 
